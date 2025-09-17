@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tuf Loife</h1>
+    <h2>Move</h2>
+    <button id="dark">Lights off</button>
+    <button id="light">Lights on</button>
+    <button id="stop">Stop</button>
+    <button id="resume">Resume</button>
+</body>
+<script>
+    const mode=document.querySelector("body");
+    const drk=document.getElementById("dark");
+    const lgh=document.getElementById("light");
+    drk.addEventListener('click',()=>mode.style.backgroundColor="grey");
+    lgh.addEventListener('click',()=>mode.style.backgroundColor="white");
+
+    let running=true;
+    function changeNUM(){
+        const change=document.querySelector('h2');
+        change.innerHTML=parseInt(Math.random()*100+1);
+    };
+    let clock=setInterval(changeNUM, 1000);
+    document.getElementById("stop").addEventListener('click',()=>{
+        if (running){
+            running=false;
+            clearInterval(clock)
+        }
+    })
+    document.getElementById("resume").addEventListener('click',()=>{
+        running=true;
+        clock=setInterval(changeNUM, 1000);
+    })
+</script>
+</html>

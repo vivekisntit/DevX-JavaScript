@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <!-- img1 -->
+            <li>
+                <img 
+                width="200px" 
+                id="photoshop" 
+                src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="photoshop">
+            </li>
+            <!-- img2 -->
+            <li>
+                <img 
+                width="200px" 
+                id="japan" 
+                src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="">
+            </li>
+            <!-- img3 -->
+            <li>
+                <img 
+                width="200px" 
+                id="river" 
+                src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="">
+            </li>
+            <!-- img4 -->
+            <li>
+                <img 
+                width="200px" 
+                id="Eule" 
+                src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt=""onclick="alert('Die Eule')" >
+            </li>
+            <!-- img5 -->
+            <li>
+                <img 
+                width="200px" 
+                id="prayer" 
+                src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="">
+            </li>
+            <!-- gogel -->
+            <li>
+                <a 
+                style="color: aliceblue;" 
+                href="https://google.com" 
+                id="google">Google
+                </a>
+            </li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('Eule').onclick=()=>alert("Ein EUlE!!!")
+    document.getElementById('Eule').addEventListener('click',()=>("Du bist eine Eule"))
+    // document.getElementById('google').addEventListener('click',(e)=>e.preventDefault(),false)
+    document.querySelector('#images').addEventListener('click',(e)=>{
+        let rem=e.target.parentNode;
+        rem.remove();
+    })
+</script>
+</html>
